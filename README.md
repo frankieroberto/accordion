@@ -21,7 +21,7 @@ CSS and image icons. You can chose to apply your own styling by using the javasc
 The javascript does not require jQuery or any other frameworks. However it does require
 some APIs not present in older browsers (notably older versions of Internet Explorer).
 
-Where the browser doesn't support the required APIs, the javascript doesn’t alter the HTML,
+Where the browser doesn’t support the required APIs, the javascript doesn’t alter the HTML,
 allowing all the sections to be read normally. This is a form of Progressive Enhancement.
 
 The accordion can be made to work in older browsers, as far back as Internet Explorer 8,
@@ -103,7 +103,7 @@ Multiple accordions can be added per page, but this isn’t recommended.
 By default, the javascript just defines an `Accordion` function, and
 doesn’t do anything else.
 
-To set up an accordion, you just need to initialized a new `Accordion`
+To set up an accordion, you just need to initialize a new `Accordion`
 object with a reference to an element, eg:
 
 ```javascript
@@ -144,8 +144,8 @@ There’s a few things that could be done to improve this code or add functional
   browser functionality where it exists.
 * Save state about which sections to the URL query string, and restore state on page load,
   so that you could send a link to someone showing particular sections open.
-* Add a CSS pre-processor so that the icons could be include as data-urls, saving a network request.
-* Make the component available as an npm module and/or a Ruby Gem.
+* Add a CSS pre-processor so that the icons could be included as data-urls, saving a network request.
+* Make the component available as an npm package and/or a Ruby Gem.
 * Add tests.
 
 
