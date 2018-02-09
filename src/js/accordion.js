@@ -112,6 +112,9 @@ AccordionSection.prototype.setup = function() {
 
   var header = this.element.querySelector('.accordion-section-header')
   header.addEventListener('click', this.toggleExpanded.bind(this))
+  header.addEventListener('keypress', this.keyPressed.bind(this))
+  header.setAttribute('tabindex', '0')
+  header.setAttribute('role', 'button')
 
   var icon = document.createElement('span')
   icon.setAttribute('class', 'icon')
@@ -124,6 +127,14 @@ AccordionSection.prototype.toggleExpanded = function(){
 
   this.setExpanded(!expanded)
   this.accordion.updateOpenAll()
+}
+
+AccordionSection.prototype.keyPressed = function(event) {
+
+  if (event.key === " " || event.key === "Enter") {
+    event.preventDefault();
+    this.toggleExpanded();
+  }
 }
 
 AccordionSection.prototype.expanded = function() {
