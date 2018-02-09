@@ -57,11 +57,13 @@
   width: 16px;
   margin-top: -8px;
 
+  /* Note: you may have to update these URL paths */;
+
   /* PNG fallback for SVG */
-  background-image: url('/static/images/icon-plus-minus.png');
+  background-image: url('/src/images/icon-plus-minus.png');
 
   /* SVG sprite */
-  background: url("/static/images/icon-plus-minus.svg"), linear-gradient(transparent, transparent);
+  background: url("/src/images/icon-plus-minus.svg"), linear-gradient(transparent, transparent);
 
   background-repeat: no-repeat;
   background-position: 0 -16px;
