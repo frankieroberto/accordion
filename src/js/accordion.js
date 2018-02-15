@@ -116,8 +116,10 @@ AccordionSection.prototype.setup = function() {
   header.setAttribute('tabindex', '0')
   header.setAttribute('role', 'button')
 
-  var icon = document.createElement('span')
-  icon.setAttribute('class', 'icon')
+    var icon = document.createElement('a')
+    icon.setAttribute('class', 'icon')
+    icon.setAttribute('aria-label', 'Open')
+    icon.setAttribute('href', 'javascript:void(0)')
 
   header.appendChild(icon)
 }
@@ -143,6 +145,13 @@ AccordionSection.prototype.expanded = function() {
 
 AccordionSection.prototype.setExpanded = function(expanded) {
   this.element.setAttribute('aria-expanded', expanded)
+
+    var icon = this.element.querySelector('.icon')
+    if (expanded) {
+        icon.setAttribute('aria-label', 'Close')
+    } else {
+        icon.setAttribute('aria-label', 'Open')
+    }
 
   // This is set to trigger reflow for IE8, which doesn't
   // always reflow after a setAttribute call.
