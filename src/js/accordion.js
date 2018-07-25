@@ -64,6 +64,9 @@ Accordion.prototype.setup = function() {
 }
 
 Accordion.prototype.openOrCloseAll = function(event) {
+  // if the accordion is within a form the open/close button
+  // would submit the form
+  event.preventDefault();
 
   var open_or_close_all_button = event.target
   var now_expanded = !(open_or_close_all_button.getAttribute('aria-expanded') == 'true')
