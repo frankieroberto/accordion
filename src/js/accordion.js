@@ -54,6 +54,7 @@ Accordion.prototype.setup = function() {
   open_or_close_all_button.textContent = 'Open all'
   open_or_close_all_button.setAttribute('class', 'accordion-expand-all')
   open_or_close_all_button.setAttribute('aria-expanded', 'false')
+  open_or_close_all_button.setAttribute('type', 'button')
 
   open_or_close_all_button.addEventListener('click', this.openOrCloseAll.bind(this))
 
