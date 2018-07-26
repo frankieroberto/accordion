@@ -98,6 +98,36 @@ The javascript adds the following classes and elements, which are used for styli
 
 Multiple accordions can be added per page, but this isn’t recommended.
 
+By default, all sections of the accordion are closed until the user interacts with
+them. You can alter this and specify one or more section to initially be open by adding
+the `accordion-section--expanded` class to the relevant sections, eg:
+
+```html
+<div class="accordion">
+
+  <div class="accordion-section accordion-section--expanded">
+
+    <div class="accordion-section-header">
+      <h2 class="heading-medium">Section title</h2>
+    </div>
+    <div class="accordion-section-body">
+      <ul class="list"><li>Section content</li></ul>
+    </div>
+
+  </div>
+  <div class="accordion-section">
+
+    <div class="accordion-section-header">
+      <h2 class="heading-medium">Section title</h2>
+    </div>
+    <div class="accordion-section-body">
+      <ul class="list"><li>Section content</li></ul>
+    </div>
+
+  </div>
+</div>
+```
+
 ## Initialising the accordions.
 
 By default, the javascript just defines an `Accordion` function, and

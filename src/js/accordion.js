@@ -108,7 +108,10 @@ Accordion.prototype.updateOpenAll = function() {
 }
 
 AccordionSection.prototype.setup = function() {
-  this.element.setAttribute('aria-expanded', 'false')
+
+  var sectionExpanded = this.element.classList.contains('accordion-section--expanded')
+
+  this.element.setAttribute('aria-expanded', sectionExpanded)
 
   var header = this.element.querySelector('.accordion-section-header')
   header.addEventListener('click', this.toggleExpanded.bind(this))
@@ -120,6 +123,13 @@ AccordionSection.prototype.setup = function() {
   icon.setAttribute('class', 'icon')
 
   header.appendChild(icon)
+
+  /* Remove this class now, as the `aria-expanded` attribute is being used
+       to store expanded state instead. */
+  if (sectionExpanded) {
+    this.element.classList.remove('accordion-section--expanded');
+  }
+
 }
 
 AccordionSection.prototype.toggleExpanded = function(){
